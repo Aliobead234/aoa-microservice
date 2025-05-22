@@ -19,6 +19,10 @@ func SetPrivateKey(pk *rsa.PrivateKey) {
 	privKey = pk
 }
 
+func GetPrivateKey() *rsa.PrivateKey {
+	return privKey
+}
+
 func Sign(data []byte) (string, error) {
 	return SignRSA(privKey, data)
 }
