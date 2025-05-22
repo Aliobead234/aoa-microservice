@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+
+option go_package = "github.com/AliObead234/aoa-microservice/functions";
+package functions;
+
+service Echo {
+    rpc EchoStr(EchoData) returns (EchoData) {}
+    rpc EchoCounter(EchoData) returns (stream EchoData) {}
+    rpc ConcatEchos(stream EchoData) returns (stream EchoData) {}
+    rpc PermuteEcho(stream EchoData) returns (stream EchoData) {}
+}
+
+message EchoData {
+    string str = 1;
+}
